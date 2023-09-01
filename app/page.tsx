@@ -1,4 +1,4 @@
-import FeaturedProducts from "@/components/FeaturedProducts";
+import FeaturedProducts from "@/components/product/FeaturedProducts";
 import { Search } from "lucide-react";
 
 export default function Home() {

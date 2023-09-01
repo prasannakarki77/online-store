@@ -1,10 +1,10 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import ProductCard from "./ProductCard";
 import { Product } from "@/types/product";
-import EmptyState from "./EmptyState";
-import SkeletonCard from "./skeleton/SkeletonCard";
+import EmptyState from "../EmptyState";
+import SkeletonCard from "../skeleton/SkeletonCard";
+import ProductCard from "./ProductCard";
 const FeaturedProducts = () => {
   const { data, error, refetch, isError, isLoading } = useQuery({
     queryKey: ["items"],
