@@ -1,8 +1,6 @@
-import Image from "next/image";
-
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-2xl">
+    <div className="navbar bg-base-100 shadow-2xl  ">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">Online Store</a>
       </div>
