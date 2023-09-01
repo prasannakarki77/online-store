@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "../components/Navbar";
-import ClientOnly from "@/components/ClientOnly";
 import Footer from "@/components/Footer";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ClientOnly>
-        <Navbar />
-      </ClientOnly>
-      <body className={inter.className}>{children}</body>
-      <Footer />
+      <ReactQueryProvider>
+        <body className={inter.className}>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </body>
+      </ReactQueryProvider>
     </html>
   );
 }

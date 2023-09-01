@@ -1,6 +1,5 @@
-import ItemCard from "@/components/ItemCard";
+import FeaturedProducts from "@/components/FeaturedProducts";
 import { Search } from "lucide-react";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -28,15 +27,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className=" p-10 ">
-        <h1 className=" text-2xl font-bold mb-4">Featured</h1>
-        <div className=" w-full grid grid-cols-4 gap-1 ">
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-        </div>
-      </div>
+      <FeaturedProducts />
     </main>
   );
 }

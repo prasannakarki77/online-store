@@ -1,8 +1,12 @@
+import Link from "next/link";
+
 const Navbar = () => {
   return (
     <div className="navbar bg-base-100 shadow-2xl  ">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">Online Store</a>
+        <Link className="btn btn-ghost normal-case text-xl" href={"/"}>
+          Online Store
+        </Link>
       </div>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
