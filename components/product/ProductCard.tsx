@@ -7,7 +7,7 @@ const ProductCard: React.FC<{ data: Product }> = ({ data }) => {
 
   return (
     <Link
-      className="card sm:w-60 bg-base-100 border-slate-600 border-2 hover:border-slate-400  transition-all "
+      className="card  bg-base-100 border-slate-600 border-2 hover:border-slate-400  transition-all w-full  "
       href={`/product/${id}`}
     >
       <figure className=" h-44   object-contain  bg-white  ">
