@@ -61,7 +61,6 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 git clone https://github.com/prasannakarki77/online-store.git
 
 # Install dependencies
-
 $ npm install
 
 or
@@ -70,7 +69,6 @@ $ yarn
 
 
 # Run the app
-
 $ npm run dev
 
 or
