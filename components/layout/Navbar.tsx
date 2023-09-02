@@ -3,6 +3,7 @@
 import useProductCart from "@/app/hooks/useProductCart";
 import Link from "next/link";
 import ProductCart from "../product/ProductCart";
+import { Store } from "lucide-react";
 
 const Navbar = () => {
   const { cart } = useProductCart();
@@ -10,7 +11,7 @@ const Navbar = () => {
     <div className="navbar bg-base-100 shadow-2xl  ">
       <div className="flex-1">
         <Link className="btn btn-ghost normal-case text-xl" href={"/"}>
-          Online Store
+          <Store /> Online <span>Store</span>
         </Link>
       </div>
       <div className="flex-none">
