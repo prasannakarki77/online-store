@@ -1,34 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- Please update value in the {}  -->
 
-## Getting Started
+<h1 align="center">Online Store</h1>
 
-First, run the development server:
+<div align="center">
+  <h3>
+    <a href="https://online-store-prasannakarki77.vercel.app/" target="_blank">
+      Demo
+    </a>
+    <span> | </span>
+    <a href="https://github.com/prasannakarki77/online-store" target="_blank">
+      Code
+    </a>
+  </h3>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+  - [Built With](#built-with)
+- [Features](#features)
+- [How To Use](#how-to-use)
+- [Contact](#contact)
+
+<!-- OVERVIEW -->
+
+## Overview
+
+A basic online E-Commerce application where users can browse products, view single product details page and add products to cart.
+
+### Built With
+
+- [React](https://reactjs.org/)
+- [Next JS](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [DaisyUi](https://daisyui.com/)
+- [TanStackQuery](https://tanstack.com/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [FakeStoreApi](https://fakestoreapi.com/)
+
+## Features
+
+- Home Page - Featured products showcase
+- Products/Search Page - All Products displayed with a product title search bar
+- Product Page - Single product showcase with all the details and add to cart action
+- Shopping Cart - Cart notification and popup with cart items details and total amount
+- Additional - Skeleton loading for products cards while fetching data from API, loading component for page load and error handling
+
+## How To Use
+
+<!-- Example: -->
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# Clone this repository
+git clone https://github.com/prasannakarki77/online-store.git
+
+# Install dependencies
+
+$ npm install
+
+or
+
+$ yarn
+
+
+# Run the app
+
+$ npm run dev
+
+or
+
+$ yarn dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contact
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- GitHub [@prasannakarki77](https://github.com/prasannakarki77)
+- Email prasanna.karki77@gmail.com
