@@ -10,6 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const ProductClient: React.FC<{ productId: number }> = ({ productId }) => {
   const { data, isError, isLoading } = useQuery({
@@ -40,18 +41,27 @@ const ProductClient: React.FC<{ productId: number }> = ({ productId }) => {
     };
     const updatedCart = newCart(cartItem, cart);
     addToCart(updatedCart);
+    toast.success("Item added to cart !");
   };
 
   if (isError) {
     return (
       <EmptyState
         title="Something went wrong"
-        subtitle="Failed to load products"
+        subtitle="Failed to load product"
       />
     );
   }
   if (isLoading) {
     return <Loader />;
+  }
+  if (!data) {
+    return (
+      <EmptyState
+        title="Product Not Found"
+        subtitle={`No Product with id "${productId}"`}
+      />
+    );
   }
 
   return (

@@ -11,7 +11,8 @@ const Navbar = () => {
     <div className="navbar bg-base-100 shadow-2xl  ">
       <div className="flex-1">
         <Link className="btn btn-ghost normal-case text-xl" href={"/"}>
-          <Store /> Online <span>Store</span>
+          <Store className="bg-primary p-1 rounded-md text-white" /> Online{" "}
+          <span>Store</span>
         </Link>
       </div>
       <div className="flex-none">

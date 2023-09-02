@@ -4,7 +4,7 @@ import Link from "next/link";
 const SkeletonCard = () => {
   return (
     <Link
-      className="card sm:w-60 bg-base-100 border-slate-600 border-2 hover:border-slate-400  transition-all "
+      className="card sm:w-60 bg-base-100 border-slate-600 border-2 hover:border-slate-400  transition-all overflow-hidden "
       href={"/"}
     >
       <div className=" h-44   object-contai bg bg-slate-600 animate-pulse  "></div>
