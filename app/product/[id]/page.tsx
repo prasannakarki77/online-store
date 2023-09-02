@@ -8,7 +8,9 @@ interface IParams {
 }
 const ProductPage: React.FC<{ params: IParams }> = async ({ params }) => {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(["item"], () => fetchProductById(params.id));
+  await queryClient.prefetchQuery(["product"], () =>
+    fetchProductById(params.id)
+  );
   const dehydrateState = dehydrate(queryClient);
   return (
     <ReactQueryHydrate state={dehydrateState}>

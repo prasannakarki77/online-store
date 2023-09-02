@@ -13,7 +13,7 @@ import { useState } from "react";
 
 const ProductClient: React.FC<{ productId: number }> = ({ productId }) => {
   const { data, isError, isLoading } = useQuery({
-    queryKey: ["item"],
+    queryKey: ["product"],
     queryFn: () => fetchProductById(productId),
   });
 
@@ -55,7 +55,7 @@ const ProductClient: React.FC<{ productId: number }> = ({ productId }) => {
   }
 
   return (
-    <div className="grid grid-cols-2 container justify-center p-20 mx-auto gap-10">
+    <div className="grid md:grid-cols-2 container justify-center p-5 md:p-10  mx-auto gap-10">
       <figure className=" w-full object-contain  bg-white  flex justify-center items-center rounded-lg ">
         <Image src={image} alt="Shoes" width={200} height={300} />
       </figure>
@@ -86,9 +86,11 @@ const ProductClient: React.FC<{ productId: number }> = ({ productId }) => {
           </button>
         </div>
         <div className="flex gap-2 w-full">
-          <button className=" btn btn-primary  flex-1 ">Buy Now</button>
+          <button className=" btn btn-primary  flex-1 text-sm sm:text-md   ">
+            Buy Now
+          </button>
           <button
-            className=" btn btn-primary flex-1  "
+            className=" btn btn-primary flex-1 text-sm sm:text-md  "
             onClick={handleAddToCart}
           >
             <ShoppingCart /> Add to Cart

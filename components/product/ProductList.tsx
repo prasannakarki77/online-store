@@ -7,14 +7,12 @@ import ProductGrid from "./ProductGrid";
 import { fetchProductList } from "@/actions/queryFunctions";
 import { ISearchParams } from "@/types/product";
 import SearchInput from "../SearchInput";
-import { useRouter } from "next/navigation";
 
 interface IProductPage {
   searchParams: ISearchParams;
 }
 
 const ProductList = ({ searchParams }: IProductPage) => {
-  const router = useRouter();
   const { data, error, refetch, isError, isLoading } = useQuery({
     queryKey: ["products"],
     queryFn: () => fetchProductList(searchParams),
@@ -53,22 +51,22 @@ const ProductList = ({ searchParams }: IProductPage) => {
     );
   }
 
-  const handleSearch = (query: string) => {
-    router.replace(`/product?title=${query}`);
-  };
-
   return (
     <>
       <div className=" flex justify-center  mb-10">
-        <SearchInput onSearch={handleSearch} />
+        <SearchInput />
       </div>
-      {searchParams.title && data && (
-        <p className="mb-10">
+
+      <p className="mb-10">
+        {searchParams.title && data ? (
           <span className="font-medium">
             Search results : {searchParams.title} ({data?.length})
           </span>
-        </p>
-      )}
+        ) : (
+          <span className="text-base-500 text-base-300 ">-</span>
+        )}
+      </p>
+
       <div className="flex justify-center items-center"> {content}</div>
     </>
   );

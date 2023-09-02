@@ -25,9 +25,7 @@ const ProductCart = () => {
       </span>
 
       <div className="card-actions w-full">
-        <button className="btn btn-primary btn-block btn-sm w-full">
-          View cart
-        </button>
+        <button className="btn btn-primary btn-block btn-sm">View cart</button>
       </div>
     </div>
   );
