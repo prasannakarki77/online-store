@@ -1,8 +1,11 @@
 "use client";
 
 import { fetchProductById } from "@/actions/queryFunctions";
+import useProductCart from "@/app/hooks/useProductCart";
 import EmptyState from "@/components/EmptyState";
 import Loader from "@/components/Loader";
+import { CartItem } from "@/types/product";
+import { newCart } from "@/utils/cartUtils";
 import { useQuery } from "@tanstack/react-query";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 import Image from "next/image";
@@ -16,16 +19,27 @@ const ProductClient: React.FC<{ productId: number }> = ({ productId }) => {
 
   const { title, price, category, image, rating, description } = data;
 
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<number>(1);
+
+  const { addToCart, cart } = useProductCart();
 
   const handleIncrement = () => {
     setCount((p) => p + 1);
   };
 
   const handleDecrement = () => {
-    if (count > 0) {
+    if (count > 1) {
       setCount((p) => p - 1);
     }
+  };
+
+  const handleAddToCart = () => {
+    const cartItem: CartItem = {
+      product: data,
+      count,
+    };
+    const updatedCart = newCart(cartItem, cart);
+    addToCart(updatedCart);
   };
 
   if (isError) {
@@ -73,8 +87,10 @@ const ProductClient: React.FC<{ productId: number }> = ({ productId }) => {
         </div>
         <div className="flex gap-2 w-full">
           <button className=" btn btn-primary  flex-1 ">Buy Now</button>
-          <button className=" btn btn-primary flex-1  ">
-            {" "}
+          <button
+            className=" btn btn-primary flex-1  "
+            onClick={handleAddToCart}
+          >
             <ShoppingCart /> Add to Cart
           </button>
         </div>

@@ -8,7 +8,6 @@ interface IClientOnly {
 
 const ClientOnly: React.FC<IClientOnly> = ({ children }) => {
   const [hasMounted, setHasMounted] = useState(false);
-
   useEffect(() => {
     setHasMounted(true);
   }, []);

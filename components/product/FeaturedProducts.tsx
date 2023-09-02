@@ -7,7 +7,7 @@ import { fetchFeaturedProducts } from "@/actions/queryFunctions";
 
 const FeaturedProducts = () => {
   const { data, error, refetch, isError, isLoading } = useQuery({
-    queryKey: ["items"],
+    queryKey: ["featured"],
     queryFn: fetchFeaturedProducts,
   });
 

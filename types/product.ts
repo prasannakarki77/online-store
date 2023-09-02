@@ -14,3 +14,8 @@ export interface Product {
 export interface ISearchParams {
   title?: string;
 }
+
+export interface CartItem {
+  product: Product;
+  count: number;
+}

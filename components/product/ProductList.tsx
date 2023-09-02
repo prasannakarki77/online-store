@@ -16,7 +16,7 @@ interface IProductPage {
 const ProductList = ({ searchParams }: IProductPage) => {
   const router = useRouter();
   const { data, error, refetch, isError, isLoading } = useQuery({
-    queryKey: ["items"],
+    queryKey: ["products"],
     queryFn: () => fetchProductList(searchParams),
   });
 
