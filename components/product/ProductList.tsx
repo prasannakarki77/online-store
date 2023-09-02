@@ -1,6 +1,5 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import EmptyState from "../EmptyState";
 import SkeletonCard from "../skeleton/SkeletonCard";
 import ProductGrid from "./ProductGrid";

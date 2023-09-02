@@ -1,7 +1,7 @@
 import SearchInput from "@/components/SearchInput";
 import ProductList from "@/components/product/ProductList";
 
-const SearchPage = () => {
+const ProductsPage = () => {
   return (
     <div className=" p-10">
       <div className=" flex justify-center  mb-10">
@@ -11,4 +11,4 @@ const SearchPage = () => {
     </div>
   );
 };
-export default SearchPage;
+export default ProductsPage;

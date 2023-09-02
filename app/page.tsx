@@ -1,5 +1,6 @@
 import FeaturedProducts from "@/components/product/FeaturedProducts";
 import { Search } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -20,10 +21,10 @@ export default function Home() {
               excepturi exercitationem quasi.
             </p>
 
-            <button className="btn btn-primary">
+            <Link className="btn btn-primary" href="/product">
               {" "}
               <Search size={20} /> Browse our store
-            </button>
+            </Link>
           </div>
         </div>
       </div>
