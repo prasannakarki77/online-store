@@ -1,17 +1,27 @@
 "use client";
+
 import { useQuery } from "@tanstack/react-query";
 import EmptyState from "../EmptyState";
 import SkeletonCard from "../skeleton/SkeletonCard";
 import ProductGrid from "./ProductGrid";
 import { fetchProductList } from "@/actions/queryFunctions";
+import { ISearchParams } from "@/types/product";
+import SearchInput from "../SearchInput";
+import { useRouter } from "next/navigation";
 
-const ProductList = () => {
+interface IProductPage {
+  searchParams: ISearchParams;
+}
+
+const ProductList = ({ searchParams }: IProductPage) => {
+  const router = useRouter();
   const { data, error, refetch, isError, isLoading } = useQuery({
     queryKey: ["items"],
-    queryFn: fetchProductList,
+    queryFn: () => fetchProductList(searchParams),
   });
 
   let content;
+
   if (isError) {
     content = (
       <EmptyState
@@ -34,6 +44,33 @@ const ProductList = () => {
     );
   }
 
-  return <div className="flex justify-center items-center"> {content}</div>;
+  if (data?.length === 0) {
+    content = (
+      <EmptyState
+        title={`"${searchParams.title}" not found`}
+        subtitle="Product is not available"
+      />
+    );
+  }
+
+  const handleSearch = (query: string) => {
+    router.replace(`/product?title=${query}`);
+  };
+
+  return (
+    <>
+      <div className=" flex justify-center  mb-10">
+        <SearchInput onSearch={handleSearch} />
+      </div>
+      {searchParams.title && data && (
+        <p className="mb-10">
+          <span className="font-medium">
+            Search results : {searchParams.title} ({data?.length})
+          </span>
+        </p>
+      )}
+      <div className="flex justify-center items-center"> {content}</div>
+    </>
+  );
 };
 export default ProductList;

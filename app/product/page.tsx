@@ -1,13 +1,24 @@
-import SearchInput from "@/components/SearchInput";
+import { fetchProductList } from "@/actions/queryFunctions";
+import ReactQueryHydrate from "@/components/ReactQueryHydrate";
 import ProductList from "@/components/product/ProductList";
+import { ISearchParams } from "@/types/product";
+import { QueryClient, dehydrate } from "@tanstack/react-query";
 
-const ProductsPage = () => {
+interface IProductPage {
+  searchParams: ISearchParams;
+}
+
+const ProductsPage = async ({ searchParams }: IProductPage) => {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery(["items"], () =>
+    fetchProductList(searchParams)
+  );
+  const dehydrateState = dehydrate(queryClient);
   return (
     <div className=" p-10">
-      <div className=" flex justify-center  mb-10">
-        <SearchInput />
-      </div>
-      <ProductList />
+      <ReactQueryHydrate state={dehydrateState}>
+        <ProductList searchParams={searchParams} />
+      </ReactQueryHydrate>
     </div>
   );
 };
