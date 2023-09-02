@@ -41,7 +41,13 @@ const ProductClient: React.FC<{ productId: number }> = ({ productId }) => {
     };
     const updatedCart = newCart(cartItem, cart);
     addToCart(updatedCart);
-    toast.success("Item added to cart !");
+    toast.success("Item added to cart !", {
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
   };
 
   if (isError) {
