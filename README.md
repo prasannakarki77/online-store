@@ -29,7 +29,7 @@
 
 ## Overview
 
-A basic online E-Commerce application where users can browse products, view single product details page and add products to cart.
+A basic E-Commerce web application where users can browse products, view single product details page and add products to cart.
 
 ### Built With
 
@@ -48,6 +48,7 @@ A basic online E-Commerce application where users can browse products, view sing
 - Product Page - Single product showcase with all the details and add to cart action
 - Shopping Cart - Cart notification and popup with cart items details and total amount
 - Additional - Skeleton loading for products cards while fetching data from API, loading component for page load and error handling
+- Responsive design throughout all screen sizes
 
 ## How To Use
 
